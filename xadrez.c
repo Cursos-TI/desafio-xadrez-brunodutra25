@@ -4,7 +4,7 @@
 
 int main() {
     //Declaração das variáveis do código
-    int bispo=5, torre=5, rainha=8;
+    int bispo=5, torre=5, rainha=8, cavalo=2;
 
     //Bloco de código para a movimentação do bispo 5 casas na diagonal usando a estrutura de repetição "while"
     printf("Movimentação do bispo: \n");
@@ -13,10 +13,10 @@ int main() {
         bispo++;
     }
 
-    //Bloco de código para a movimentação da torre 5 casas para frente usando a estrutura de repetição "do-while"
+    //Bloco de código para a movimentação da torre 5 casas para cima usando a estrutura de repetição "do-while"
     printf("\nMovimentação da torre: \n");
     do {
-        printf("Frente\n");             //Imprime a direção do movimento
+        printf("Cima\n");             //Imprime a direção do movimento
         torre++;
     } while (torre <= 9);
 
@@ -25,6 +25,16 @@ int main() {
     printf("\nMovimentação da rainha: \n");
     for (int i=0; rainha<=15; rainha++) {
         printf("Direita\n");            //Imprime a direção do movimento
+    }
+
+    //Bloco de código para a movimentação do cavalo 2 casas para cime e uma para a direita usando loops aninhados
+    printf("\nMovimentação do cavalo: \n");
+    while (cavalo >= 2){
+        for (int i=1; i<=cavalo; i++) {
+            printf("Cima\n");           //Imprime a direção do movimento do loop interno
+        }
+        printf("Direita\n");            //Imprime a direção do movimento do loop externo
+        cavalo--;
     }
 
     return 0;
