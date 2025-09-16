@@ -14,34 +14,45 @@ void moverbispo(int casas) {
             }
             printf("\n");               //Impressão para pular linha para melhor organização do código
         }
-        moverbispo(casas - 1);
+        moverbispo(casas - 1);          //Recursividade
     }
 }
 
 //Função para movimentação da Torre usando a recursividade
 void movertorre(int casas) {
     if (casas > 0) {
-        printf("Direita\n");
-        movertorre(casas - 1);
+        printf("Direita\n");            //Imprime a movimentação da torre
+        movertorre(casas - 1);          //Recursividade
     }
 }
 
 //Função para movimentação da Rainha usando a recursividade
 void moverrainha(int casas) {
     if (casas > 0) {
-        printf("Esquerda\n");
-        moverrainha(casas - 1);
+        printf("Esquerda\n");           //Imprime a movimentação da rainha
+        moverrainha(casas - 1);         //Recursividade
     }
 }
 
-//Função para movimentação do cavalo usando loops múltiplos
+//Função para movimentação do cavalo usando loops complexos com comando break e continue
 void movercavalo(int casas) {
     if (casas > 0) {
-        for (int v=2, h=1; v<=3 && h>=0; v++, h--) {
-            printf("Cima\n");
+        int h=1;
+
+        while (h<=1) {
+            for (int v=1; v<=2; v++) {
+                printf("Cima\n");       //Loop interno imprime a movimentação vertical 
+                if (v==2){
+                break;
+            }
         }
-        printf("Direita\n");
-    }
+        printf("Direita\n");            //Loop externo imprime a movimentação horizontal
+        h++;
+        if (h==1){
+            continue;
+        }   
+        }
+}
 }
 
 int main() {
@@ -61,7 +72,7 @@ int main() {
     printf("\nMovimentação da rainha: \n");
     moverrainha(rainha);
 
-    //Bloco de código para a movimentação do cavalo 2 casas para cime e uma para a direita usando loops múltiplos
+    //Bloco de código para a movimentação em L do cavalo
     printf("\nMovimentação do cavalo: \n");
     movercavalo(cavalo);
 
